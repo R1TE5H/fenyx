@@ -27,7 +27,7 @@ export default function BasicNavBar() {
               }}
             >
               <FaSquare style={{ marginRight: "20px" }} size={30} />
-              FENYX
+              Test
             </Link>
 
             <div
