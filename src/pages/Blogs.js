@@ -16,6 +16,10 @@ export default function Blogs() {
     console.log(choice);
   };
 
+  const handleSearch = (value) => {
+    console.log(value);
+  };
+
   const featured = determineFeatured();
 
   function determineFeatured() {
@@ -108,7 +112,13 @@ export default function Blogs() {
         )}
 
         <div>
-          <input type="text" placeholder="Search" className="blog-search" />
+          <input
+            type="text"
+            placeholder="Search"
+            className="blog-search"
+            style={{ color: `var(--white)` }}
+            onChange={(e) => handleSearch(e.target.value)}
+          />
         </div>
       </div>
       <div

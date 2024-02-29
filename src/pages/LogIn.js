@@ -1,10 +1,10 @@
 import React from "react";
-// import axios from "axios";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import Joi from "joi";
 import { joiResolver } from "@hookform/resolvers/joi";
 import { Toaster, toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../styles/forms.css";
 import "../styles/main.css";
@@ -13,6 +13,7 @@ import useWindowDimensions from "./../services/windowSize";
 
 export default function LogIn() {
   const { width } = useWindowDimensions();
+  const navigate = useNavigate();
 
   const schema = Joi.object({
     email: Joi.string().required().min(3).max(100).label("Email"),
@@ -25,15 +26,24 @@ export default function LogIn() {
     formState: { errors },
   } = useForm({ resolver: joiResolver(schema) });
 
+  // ! Posting Login to Server
   const loginUser = (data) => {
-    console.log(data);
-    toast.error("Invalid Email or Password", {
-      style: {
-        marginTop: "20px",
-        color: `var(--white)`,
-        background: `var(--smoke)`,
-      },
-    });
+    axios
+      .post("http://localhost:5000/login", data)
+      .then((res) => {
+        console.log("JWT:", res.data);
+        navigate("/blogs");
+      })
+      .catch((err) => {
+        toast.error("Invalid Email or Password", {
+          style: {
+            marginTop: "20px",
+            color: `var(--white)`,
+            background: `var(--smoke)`,
+          },
+        });
+        console.log("Error:", err);
+      });
   };
 
   const onSubmit = (data) => loginUser(data);

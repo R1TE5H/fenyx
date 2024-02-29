@@ -32,15 +32,12 @@ export default function SignUp() {
     formState: { errors },
   } = useForm({ resolver: joiResolver(schema) });
 
-  // const [error, setError] = useState("");
-
   // ! Posting New User to Server
   const addUser = (data) => {
     axios
-      .post("http://localhost:5000/get-started", data)
+      .post("http://localhost:5000/sign-up", data)
       .then((res) => {
-        console.log("Success");
-
+        console.log(res);
         navigate("/login");
         toast.success(`Welcome to FENYX ${data.first_name}`, {
           style: {

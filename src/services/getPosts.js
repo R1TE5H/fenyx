@@ -27,7 +27,7 @@ We believe in transforming lives through the power of accessible real estate inv
   {
     _id: "3",
     header: "Why the Rich Invest in Real Estate",
-    text: "What do the rich know that you don't? Learn why the wealth invest in Real Estate instead of traditional investments.",
+    text: "Learn why the wealthy invest in Real Estate instead of traditional investments.",
     tag: "EXPLAINER",
     date: "1 JANUARY 2024",
     image:
