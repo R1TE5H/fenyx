@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;500&family=Orbitron:wght@800&display=swap");
+:root {
+  --magenta: #e000b3;
+  --smoke: #181818;
+  --grey: #7a7c8b;
+  --light_grey: #9b9da7;
+  --sun: #ffad12;
+  --white: #fff;
+  --black: #0a0a0a;
+  --sunset: linear-gradient(to right, #ffad12, #ff7c3c, #ff4960, #ff1482);
+}
+
+body {
+  margin: 0;
+  background-color: var(--black);
+  color: var(--white);
+  font-family: sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ! Layout */
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.section {
+  margin-bottom: 150px;
+  padding: 0px 10%;
+}
+.rows {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.columns {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 150px 5%;
+  background: linear-gradient(0deg, #0a0a0a, rgba(0, 0, 0, 0)),
+    url(../assets/landingPattern.jpg);
+}
+
+/*! Text */
+
+.logo {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  color: var(--white);
+  font-size: 28px;
+}
+
+.header-text {
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(40px, 6vw, 75px);
+  text-align: center;
+}
+
+.medium-text {
+  font-size: 24px;
+}
+
+.hero {
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+}
+
+.gradient-text {
+  background: var(--sunset);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ! Buttons and Links */
+.link {
+  text-decoration: none;
+}
+
+.btn-lg {
+  padding: 15px 35px;
+  font-size: medium;
+  color: white;
+  border-radius: 100px;
+}
+
+.btn-sm {
+  padding: 7px 20px;
+  font-size: medium;
+  color: white;
+  border-radius: 100px;
+}
+
+.gradient-bg {
+  background: var(--sunset);
+}
+
+.white-outline {
+  border: 1px solid var(--white);
+}
+
+.btn-lg:hover,
+.btn-sm:hover {
+  background: var(--white);
+  color: var(--black);
+  transform: translateY(-3px);
+  transition: 0.5s ease;
+}
+
+/* ! Keyframes and Their Classes */
+.fadeIn {
+  animation: 2s fadeIn ease;
+  z-index: 10;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+  }
+}

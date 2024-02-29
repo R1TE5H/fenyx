@@ -1,0 +1,91 @@
+.card {
+  padding: 1rem;
+  height: 350px;
+  width: 300px;
+  overflow: hidden;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.head {
+  font-weight: 400;
+}
+
+.card:hover .head {
+  background: var(--sunset);
+  font-weight: 700;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.filter-btn {
+  cursor: pointer;
+  background: var(--smoke);
+  border: none;
+  padding: 10px 20px;
+  color: var(--white);
+  border-radius: 100px;
+}
+.filter-btn:hover {
+  background: var(--grey);
+}
+
+.blog-search {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: medium;
+  background-color: var(--smoke);
+  border: none;
+}
+
+.blog-search:focus {
+  border: 2px solid var(--white);
+  outline: none;
+}
+
+.filter-select {
+  cursor: pointer;
+  background: var(--smoke);
+  border: none;
+  padding: 10px 20px;
+  color: var(--white);
+  border-radius: 100px;
+  outline: none;
+}
+.filter-option {
+  cursor: pointer;
+  background: var(--smoke);
+  border: none;
+  padding: 10px 20px;
+  color: var(--white);
+  border-radius: 100px;
+}
+
+.social-link {
+  color: var(--grey);
+  font-size: larger;
+}
+
+.social-link:hover {
+  color: var(--sunset);
+  transform: translateY(-3px);
+  transition: 0.5s;
+}
+
+.post-header {
+  font-weight: 400;
+  font-style: normal;
+  font-size: clamp(40px, 6vw, 55px);
+}
+
+.post-heading {
+  margin-top: 100px;
+}

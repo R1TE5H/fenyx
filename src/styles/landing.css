@@ -1,0 +1,73 @@
+/* Tablets and Phones */
+@media screen and (max-width: 600px) {
+  .stat-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* Laptops */
+@media screen and (min-width: 600px) {
+  .stat-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.hero-stat {
+  font-family: sans-serif;
+  font-size: clamp(60px, 12vw, 130px);
+  font-weight: medium;
+}
+
+.stat-label {
+  font-size: larger;
+  color: var(--light_grey);
+}
+
+.stats {
+  margin-right: 5%;
+}
+
+/* ! Option Cards */
+@media screen and (max-width: 700px) {
+  .option-card {
+    width: 100%;
+  }
+  .option-text {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 700px) {
+  .option-card {
+    width: 45%;
+  }
+  .option-text {
+    text-align: center;
+  }
+}
+
+.option-card {
+  background: var(--smoke);
+  border-radius: 20px;
+  padding: 30px 0px;
+}
+.option-container {
+  gap: 20px;
+  justify-content: space-around;
+  align-items: start;
+}
+
+.location-bar {
+  filter: grayscale(100%);
+  width: 10%;
+  border-radius: 100px;
+}
+
+.location-bar:hover {
+  width: 40%;
+  border-radius: 50px;
+  transition: 0.5s ease;
+  filter: grayscale(0%);
+}

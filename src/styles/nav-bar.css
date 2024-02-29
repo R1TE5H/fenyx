@@ -1,0 +1,26 @@
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10%;
+  height: 70px;
+  background: var(--black);
+}
+
+.nav-link {
+  color: var(--grey);
+  font-size: larger;
+}
+
+.nav-link:hover {
+  color: var(--white);
+  transform: translateY(-3px);
+  transition: 0.5s;
+}
+
+.hamburger-link {
+  color: var(--white);
+  text-decoration: none;
+  font-size: large;
+}
