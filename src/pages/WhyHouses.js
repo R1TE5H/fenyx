@@ -21,17 +21,17 @@ export default function WhyHouses() {
         </div>
         <br />
       </div>
-      <div className="section">
+      <div className="section" style={{ marginBottom: "80px" }}>
         <p>
           <span className="hero">
-            Massive{" "}
+            Build{" "}
             <span
               style={{
                 textDecoration: "line-through",
                 textDecorationColor: `var(--magenta)`,
               }}
             >
-              Returns
+              Wealth
             </span>{" "}
             Fortunes
           </span>
@@ -49,7 +49,7 @@ export default function WhyHouses() {
           method to amplify returns within a shorter time frame.
         </p>
       </div>
-      <div className="section">
+      <div className="section" style={{ marginBottom: "80px" }}>
         <p className="hero">Beat Inflation, Defy Recession</p>
         <p className="medium-text">
           Real Estate is <span style={{ color: `var(--sun)` }}>Scarce</span>.

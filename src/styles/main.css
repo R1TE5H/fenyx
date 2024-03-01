@@ -80,6 +80,11 @@ body {
 }
 
 /* ! Buttons and Links */
+
+button {
+  cursor: pointer;
+}
+
 .link {
   text-decoration: none;
 }
@@ -104,6 +109,7 @@ body {
 
 .white-outline {
   border: 1px solid var(--white);
+  background-color: transparent;
 }
 
 .btn-lg:hover,

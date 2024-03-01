@@ -12,6 +12,37 @@ import OptionCard from "../components/OptionCard";
 
 export default function Landing() {
   const { width } = useWindowDimensions();
+
+  const stats = [
+    {
+      value: "29",
+      name: "REAL ESTATE",
+    },
+    {
+      value: "10",
+      name: "S&P 500",
+    },
+    {
+      value: "8",
+      name: "MUTUAL FUNDS",
+    },
+  ];
+
+  const benefits = [
+    {
+      header: "Fast",
+      text: `House Flipping gets huge returns in a matter of months, enabling you to liquidate your gains quickly.`,
+    },
+    {
+      header: "Scarce",
+      text: `Real Estate's value cannot be diluted allowing it to maintain its scarcity, protecting your investment and enhancing its appreciation potential.`,
+    },
+    {
+      header: "Stable",
+      text: `Unlike volatile markets, real estate offers enduring value, acting as a robust foundation for long-term financial security.`,
+    },
+  ];
+
   return (
     <>
       <div
@@ -69,18 +100,15 @@ export default function Landing() {
         </div>
         <div className="stats">
           <p>Potential Six Month Percent Returns</p>
-          <p className="columns">
-            <span className="gradient-text hero-stat">29</span>
-            <span className="stat-label">REAL ESTATE</span>
-          </p>
-          <p className="columns">
-            <span className="gradient-text hero-stat">10</span>
-            <span className="stat-label">S&P 500</span>
-          </p>
-          <p className="columns">
-            <span className="gradient-text hero-stat">8</span>
-            <span className="stat-label">MUTUAL FUNDS</span>
-          </p>
+          {stats.map((stat, index) => (
+            <p className="columns" key={index}>
+              <span className="gradient-text hero-stat">
+                {stat.value}
+                <span style={{ fontSize: "36px" }}>%</span>
+              </span>
+              <span className="stat-label">{stat.name}</span>
+            </p>
+          ))}
         </div>
       </div>
       <div className="section">
@@ -107,51 +135,31 @@ export default function Landing() {
             gap: "20px",
           }}
         >
-          <div style={{ padding: "0px 10px" }}>
-            <p className="columns">
-              <span className="medium-text" style={{ fontWeight: "400" }}>
-                <span style={{ fontSize: "30px", color: `var(--sun)` }}>|</span>{" "}
-                Fast
-              </span>
-              <br />
-              <span style={{ color: `var(--light_grey)` }}>
-                House Flipping gets huge returns in a matter of months, enabling
-                you to liquidate your gains quickly.{" "}
-              </span>
-            </p>
-          </div>
-          <div style={{ padding: "0px 10px" }}>
-            <p className="columns">
-              <span className="medium-text" style={{ fontWeight: "400" }}>
-                <span style={{ fontSize: "30px", color: `var(--magenta)` }}>
-                  |
-                </span>{" "}
-                Scarce
-              </span>
-              <br />
-              <span style={{ color: `var(--light_grey)` }}>
-                Real Estate's value cannot be diluted allowing it to maintain
-                its scarcity, protecting your investment and enhancing its
-                appreciation potential.
-              </span>
-            </p>
-          </div>
-          <div style={{ padding: "0px 10px" }}>
-            <p className="columns">
-              <span className="medium-text" style={{ fontWeight: "400" }}>
-                <span style={{ fontSize: "30px", color: `var(--sun)` }}>|</span>{" "}
-                Stable
-              </span>
-              <br />
-              <span style={{ color: `var(--light_grey)` }}>
-                Unlike volatile markets, real estate offers enduring value,
-                acting as a robust foundation for long-term financial security.
-              </span>
-            </p>
-          </div>
+          {benefits.map((benefit, index) => (
+            <div style={{ padding: "0px 10px" }} key={index}>
+              <p className="columns">
+                <span className="medium-text" style={{ fontWeight: "400" }}>
+                  <span
+                    style={{
+                      fontSize: "30px",
+                      color: `${
+                        index % 2 === 0 ? `var(--sun)` : `var(--magenta)`
+                      }`,
+                    }}
+                  >
+                    |
+                  </span>{" "}
+                  {benefit.header}
+                </span>
+                <br />
+                <span style={{ color: `var(--light_grey)` }}>
+                  {benefit.text}
+                </span>
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-
       <div className="section">
         <p style={{ textAlign: "center" }}>
           <span className="hero">Invest with Confidence</span>
