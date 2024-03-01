@@ -5,7 +5,6 @@ import logo from "../assets/logo.png";
 
 import useWindowDimensions from "../services/windowSize";
 
-import { FaSquare } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import "../styles/nav-bar.css";
