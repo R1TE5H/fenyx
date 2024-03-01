@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Headroom from "react-headroom";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 import useWindowDimensions from "../services/windowSize";
 
@@ -24,9 +25,14 @@ export default function BasicNavBar() {
               style={{
                 display: "flex",
                 alignItems: "center",
+                gap: "20px",
               }}
             >
-              <FaSquare style={{ marginRight: "20px" }} size={30} />
+              <img
+                src={logo}
+                alt="Logo"
+                style={{ width: "30px", height: "30px" }}
+              />
               FENYX
             </Link>
 
@@ -67,9 +73,14 @@ export default function BasicNavBar() {
               style={{
                 display: "flex",
                 alignItems: "center",
+                gap: "20px",
               }}
             >
-              <FaSquare style={{ marginRight: "20px" }} size={30} />
+              <img
+                src={logo}
+                alt="Logo"
+                style={{ width: "30px", height: "30px" }}
+              />
               FENYX
             </Link>
             <GiHamburgerMenu

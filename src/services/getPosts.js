@@ -1,5 +1,7 @@
 import tipsAndTricks from "../assets/blogImages/renovateTips.jpg";
 import fenyx from "../assets/blogImages/fenyx.png";
+import rich from "../assets/blogImages/rich.jpg";
+import inflation from "../assets/blogImages/inflation.jpg";
 
 export const posts = [
   {
@@ -30,8 +32,7 @@ We believe in transforming lives through the power of accessible real estate inv
     text: "Learn why the wealthy invest in Real Estate instead of traditional investments.",
     tag: "LEARN",
     date: "1 JANUARY 2024",
-    image:
-      "https://images.unsplash.com/photo-1594329852649-012d9528deda?q=80&w=415&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: rich,
     content: `Investing plays a crucial role in wealth-building, and while many people are familiar with stocks and mutual funds, the wealthy often gravitate toward real estate for several compelling reasons.
     
 1. Tangible Asset: 
@@ -56,6 +57,8 @@ Real estate investments often come with various tax benefits. These may include 
 Real estate investments offer a level of control and management that stocks and mutual funds don't. Property owners can actively make decisions regarding their investments, such as renovations or strategic changes to enhance property value. This hands-on approach aligns with the preferences of many wealthy investors.
     
 In summary, while stocks and mutual funds remain essential components of diversified portfolios, the wealthy often favor real estate for its tangible nature, income potential, diversification benefits, leverage opportunities, potential for appreciation, tax advantages, and the control it affords over investments. These factors contribute to a well-rounded and robust wealth-building strategy for the top 1% and other sophisticated investors.
+
+Now you can get in on the action. With FENYX you can get involved without having to purchase an entire property. Start house flipping today to capitalize on real estate.
     `,
     featured: false,
   },
@@ -65,9 +68,7 @@ In summary, while stocks and mutual funds remain essential components of diversi
     text: "Learn how inflation works and what it means for your future.",
     tag: "EXPLORE",
     date: "1 JANUARY 2024",
-    image:
-      "https://images.unsplash.com/photo-1594329852649-012d9528deda?q=80&w=415&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
+    image: inflation,
     content: `Imagine you're in a small town with only three pizza shops. Now, let's say that the town's population is growing, and more people want to eat pizza. At first, each pizza shop can meet the demand easily, and the prices are stable.
 
 Now, let's introduce the concept of inflation:

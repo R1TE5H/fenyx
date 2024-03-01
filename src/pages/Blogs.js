@@ -29,7 +29,16 @@ export default function Blogs() {
   };
 
   const handleSearch = (value) => {
-    console.log(value);
+    let postsList = [];
+    value = value.toLowerCase();
+
+    if (value.length === 0) return setPosts(posts);
+
+    for (const e of posts) {
+      if (e.header.toLowerCase().includes(value)) postsList.push(e);
+    }
+
+    setPosts(postsList);
   };
 
   const featured = determineFeatured();
