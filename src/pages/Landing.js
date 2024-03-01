@@ -8,6 +8,7 @@ import BlogsSwiper from "../components/BlogsSwiper";
 import useWindowDimensions from "../services/windowSize";
 import LocationBars from "../components/LocationBars";
 import CallToAction from "../components/CallToAction";
+import OptionCard from "../components/OptionCard";
 
 export default function Landing() {
   const { width } = useWindowDimensions();
@@ -162,117 +163,32 @@ export default function Landing() {
             HOW IT WORKS
           </Link>
         </div>
-        <div className={`option-container ${width > 700 ? "rows" : "columns"}`}>
-          <div className="option-card">
-            <div style={{ margin: "0px 20px" }}>
-              <p className="option-text">
-                <span className="hero"> Investor</span>
-                <br />
-                <span> Break into the House Flipping industry Today.</span>
-              </p>
-              <dl style={{ marginBottom: "30px" }}>
-                <dd>
-                  <span
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "400",
-                      color: `var(--sun)`,
-                    }}
-                  >
-                    |
-                  </span>{" "}
-                  $100 minimum investments
-                </dd>
-                <dd>
-                  <span
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "400",
-                      color: `var(--magenta)`,
-                    }}
-                  >
-                    |
-                  </span>{" "}
-                  Pick from a catalogue of projects
-                </dd>
-                <dd>
-                  <span
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "400",
-                      color: `var(--sun)`,
-                    }}
-                  >
-                    |
-                  </span>{" "}
-                  Share the Profits When the House Sells
-                </dd>
-              </dl>
-              <div
-                className={width > 700 ? "center" : ""}
-                style={{ marginBottom: "50px" }}
-              >
-                <Link to="/sign-up" className="link btn-sm white-outline">
-                  GET STARTED
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="option-card">
-            <div style={{ margin: "0px 20px" }}>
-              <p className="option-text">
-                <span className="hero"> Partner</span>
-                <br />
-                <span>Flip Your Property Now.</span>
-              </p>
-              <dl style={{ marginBottom: "30px" }}>
-                <dd>
-                  <span
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "400",
-                      color: `var(--magenta)`,
-                    }}
-                  >
-                    |
-                  </span>{" "}
-                  List a House to be Developed
-                </dd>
-                <dd>
-                  <span
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "400",
-                      color: `var(--sun)`,
-                    }}
-                  >
-                    |
-                  </span>{" "}
-                  Investors Fund the Renovations
-                </dd>
-                <dd>
-                  <span
-                    style={{
-                      fontSize: "20px",
-                      fontWeight: "400",
-                      color: `var(--magenta)`,
-                    }}
-                  >
-                    |
-                  </span>{" "}
-                  Quickly Develop Your Properties
-                </dd>
-              </dl>
-              <div
-                className={width > 700 ? "center" : ""}
-                style={{ marginBottom: "50px" }}
-              >
-                <Link to="/sign-up" className="link btn-sm white-outline">
-                  GET STARTED
-                </Link>
-              </div>
-            </div>
-          </div>
+        <div
+          className={`center ${width > 700 ? "rows" : "columns"}`}
+          style={{ gap: "50px", alignItems: "start" }}
+        >
+          <OptionCard
+            title={"Investor"}
+            description={
+              "Start your journey as a real estate flipper. Fund projects and watch your investments grow."
+            }
+            points={[
+              "$100 minimum investments.",
+              "Pick from a catalogue of projects.",
+              "Share the profits when the house sells.",
+            ]}
+          />
+          <OptionCard
+            title={"Partner"}
+            description={
+              "Quickly fund your property renovations and grow your wealth."
+            }
+            points={[
+              "Fund renovation projects.",
+              "Optimize your real estate.",
+              "Rapidly transform the property.",
+            ]}
+          />
         </div>
       </div>
       <div style={{ marginBottom: "90px" }}>

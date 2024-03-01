@@ -22,3 +22,8 @@ label {
 .input-lg:focus {
   border: 1px solid var(--light_grey);
 }
+
+.alert {
+  color: red;
+  font-size: 12px;
+}

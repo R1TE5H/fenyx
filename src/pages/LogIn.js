@@ -10,14 +10,33 @@ import "../styles/forms.css";
 import "../styles/main.css";
 import FadingSwiper from "../components/FadingSwiper";
 import useWindowDimensions from "./../services/windowSize";
+import Label from "../components/Forms";
 
 export default function LogIn() {
   const { width } = useWindowDimensions();
   const navigate = useNavigate();
 
   const schema = Joi.object({
-    email: Joi.string().required().min(3).max(100).label("Email"),
-    password: Joi.string().required().min(8).max(255).label("Password"),
+    email: Joi.string()
+      .email({ tlds: { allow: false } })
+      .required()
+      .min(3)
+      .max(100)
+      .label("Email")
+      .messages({
+        "string.empty": `Email is required.`,
+        "string.email": `Please provide a valid email.`,
+      }),
+    password: Joi.string()
+      .required()
+      .min(8)
+      .max(255)
+      .label("Password")
+      .messages({
+        "string.empty": `Password is required.`,
+        "string.min": `Minimum 8 characters long.`,
+        "string.max": "Maximum 255 characters long.",
+      }),
   });
 
   const {
@@ -52,81 +71,10 @@ export default function LogIn() {
     <>
       <Toaster position="top-center" reverseOrder={false} />
 
-      {width > 960 ? (
-        <div className="rows">
-          <FadingSwiper />
-          <div className="columns center" style={{ padding: "0px 10%" }}>
-            <p style={{ textAlign: "center", marginBottom: "50px" }}>
-              <span className="hero">Log In</span>
-              <br />{" "}
-              <span
-                className="medium-text"
-                style={{ color: `var(--light_grey)` }}
-              >
-                New to FENYX? Create an account
-              </span>{" "}
-              <Link
-                to="/sign-up"
-                className="link medium-text"
-                style={{ color: `var(--white)` }}
-              >
-                here.
-              </Link>
-            </p>
-            <form onSubmit={handleSubmit(onSubmit)} className="columns form">
-              <div className="columns">
-                <label htmlFor="email">EMAIL</label>
-                <input
-                  className="input-lg"
-                  {...register("email")}
-                  id="email"
-                  type="email"
-                />
-              </div>
-              <div className="columns">
-                <label htmlFor="password">PASSWORD</label>
-                <input
-                  className="input-lg"
-                  {...register("password")}
-                  id="password"
-                  type="password"
-                />
-              </div>
-              <Link
-                to="#"
-                className="link"
-                style={{ color: `var(--grey)`, fontSize: "small" }}
-              >
-                FORGOT PASSWORD
-              </Link>
-              {errors && (
-                <div className="center">
-                  {errors.email && (
-                    <p style={{ color: "red" }}>{errors.email.message}</p>
-                  )}
-                  {errors.password && (
-                    <p style={{ color: "red" }}>{errors.password.message}</p>
-                  )}
-                </div>
-              )}
-              <div className="btn-container center">
-                <button
-                  className="btn-lg link gradient-bg"
-                  style={{ border: "none", cursor: "pointer" }}
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      ) : (
-        <div
-          className="section center columns"
-          style={{ marginTop: "120px", marginBottom: "10%" }}
-        >
-          <p style={{ textAlign: "center", marginBottom: "60px" }}>
+      <div className="rows center">
+        {width > 960 && <FadingSwiper />}
+        <div className="columns center" style={{ padding: "0px 10%" }}>
+          <p style={{ textAlign: "center", marginBottom: "50px" }}>
             <span className="hero">Log In</span>
             <br />{" "}
             <span
@@ -134,7 +82,7 @@ export default function LogIn() {
               style={{ color: `var(--light_grey)` }}
             >
               New to FENYX? Create an account
-            </span>
+            </span>{" "}
             <Link
               to="/sign-up"
               className="link medium-text"
@@ -146,10 +94,10 @@ export default function LogIn() {
           <form
             onSubmit={handleSubmit(onSubmit)}
             className="columns form"
-            style={{ width: "70%", minWidth: "270px" }}
+            style={{ width: "70%" }}
           >
             <div className="columns">
-              <label htmlFor="email">EMAIL</label>
+              <Label name="EMAIL" errors={errors.email} />
               <input
                 className="input-lg"
                 {...register("email")}
@@ -158,7 +106,7 @@ export default function LogIn() {
               />
             </div>
             <div className="columns">
-              <label htmlFor="password">PASSWORD</label>
+              <Label name="PASSWORD" errors={errors.password} />
               <input
                 className="input-lg"
                 {...register("password")}
@@ -173,16 +121,7 @@ export default function LogIn() {
             >
               FORGOT PASSWORD
             </Link>
-            {errors && (
-              <div className="center">
-                {errors.email && (
-                  <p style={{ color: "red" }}>{errors.email.message}</p>
-                )}
-                {errors.password && (
-                  <p style={{ color: "red" }}>{errors.password.message}</p>
-                )}
-              </div>
-            )}
+
             <div className="btn-container center">
               <button
                 className="btn-lg link gradient-bg"
@@ -194,7 +133,7 @@ export default function LogIn() {
             </div>
           </form>
         </div>
-      )}
+      </div>
     </>
   );
 }
