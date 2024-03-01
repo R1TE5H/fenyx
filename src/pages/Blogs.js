@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import useWindowDimensions from "../services/windowSize";
 import { posts } from "../services/getPosts";
 import { Link } from "react-router-dom";
@@ -9,11 +9,23 @@ import BlogSocials from "../components/BlogSocials";
 
 export default function Blogs() {
   const { width } = useWindowDimensions();
+  const [statePosts, setPosts] = useState(posts);
+  const [currFilter, setCurrFilter] = useState("");
 
   const filters = ["LEARN", "EXPLORE", "NEWS", "JOURNALS"];
 
   const handleFilter = (choice) => {
-    console.log(choice);
+    if (currFilter === choice) {
+      setPosts(posts);
+      setCurrFilter("");
+      return;
+    }
+    setCurrFilter(choice);
+    let postsList = [];
+    for (const element of posts) {
+      if (element.tag === choice) postsList.push(element);
+    }
+    setPosts(postsList);
   };
 
   const handleSearch = (value) => {
@@ -125,7 +137,7 @@ export default function Blogs() {
         className={"section card-container"}
         style={{ marginBottom: "100px" }}
       >
-        {posts.map((post) => (
+        {statePosts.reverse().map((post) => (
           <Link
             to={`/blogs/${post._id}`}
             className="columns card link"

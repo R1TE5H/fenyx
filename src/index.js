@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/main.css";
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import BasicNavBar from "./components/BasicNavBar";
 import Landing from "./pages/Landing";
 import SignUp from "./pages/SignUp";
@@ -13,10 +19,20 @@ import Post from "./pages/Post";
 import Error404 from "./pages/Error404";
 import HowItWorks from "./pages/HowItWorks";
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <BrowserRouter>
     <BasicNavBar />
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/sign-up" element={<SignUp />} />
@@ -30,7 +46,6 @@ root.render(
     </Routes>
   </BrowserRouter>
 );
-
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
