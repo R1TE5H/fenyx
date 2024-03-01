@@ -59,7 +59,7 @@ export default function BlogsSwiper() {
                 {post.tag}
               </div>
               <p>
-                <span className="subHeader-text">{post.header}</span>
+                <span className="medium-text">{post.header}</span>
                 <br />
                 <br />
                 <span>{post.text}</span>

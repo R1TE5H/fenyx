@@ -57,7 +57,7 @@ export default function Landing() {
             <br />
             <br />
             <span className="medium-text">
-              Supercharge your portfolio. Invest in House Flips as little as
+              Supercharge your portfolio. Invest in House Flips for as little as
               $100.
             </span>
           </p>
