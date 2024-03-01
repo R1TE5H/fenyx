@@ -86,7 +86,7 @@ export default function BasicNavBar() {
                   height: `${height}px`,
                   width: "30%",
                   minWidth: "150px",
-                  backdropFilter: `blur(60px)`,
+                  background: `var(--black)`,
                   right: "0px",
                   display: "flex",
                   flexDirection: "column",

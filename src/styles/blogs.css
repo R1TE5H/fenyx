@@ -47,8 +47,7 @@
 }
 
 .blog-search:focus {
-  border: 2px solid var(--white);
-  outline: none;
+  outline: 2px solid var(--white);
 }
 
 .filter-select {
