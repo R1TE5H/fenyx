@@ -80,37 +80,6 @@ export default function Landing() {
       <div className="section">
         <BlogsSwiper />
       </div>
-      <div
-        className="section stat-container"
-        style={{
-          justifyContent: "space-between",
-        }}
-      >
-        <div>
-          <p>
-            <span className="hero">Elevate Your Investments</span>
-            <br />
-            <span className="medium-text">
-              Unlock Massive Returns at Lightning Speeds.
-            </span>
-          </p>
-          <Link to="/blogs" className=" link btn-sm gradient-bg">
-            BLOGS
-          </Link>
-        </div>
-        <div className="stats">
-          <p>Potential Six Month Percent Returns</p>
-          {stats.map((stat, index) => (
-            <p className="columns" key={index}>
-              <span className="gradient-text hero-stat">
-                {stat.value}
-                <span style={{ fontSize: "36px" }}>%</span>
-              </span>
-              <span className="stat-label">{stat.name}</span>
-            </p>
-          ))}
-        </div>
-      </div>
       <div className="section">
         <p>
           <span className="hero">Secure Your Future</span>
@@ -157,6 +126,37 @@ export default function Landing() {
                 </span>
               </p>
             </div>
+          ))}
+        </div>
+      </div>
+      <div
+        className="section stat-container"
+        style={{
+          justifyContent: "space-between",
+        }}
+      >
+        <div>
+          <p>
+            <span className="hero">Elevate Your Investments</span>
+            <br />
+            <span className="medium-text">
+              Unlock Massive Returns at Lightning Speeds.
+            </span>
+          </p>
+          <Link to="/blogs" className=" link btn-sm gradient-bg">
+            BLOGS
+          </Link>
+        </div>
+        <div className="stats">
+          <p>Potential Six Month Percent Returns</p>
+          {stats.map((stat, index) => (
+            <p className="columns" key={index}>
+              <span className="gradient-text hero-stat">
+                {stat.value}
+                <span style={{ fontSize: "36px" }}>%</span>
+              </span>
+              <span className="stat-label">{stat.name}</span>
+            </p>
           ))}
         </div>
       </div>
